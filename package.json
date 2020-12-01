@@ -1,0 +1,19 @@
+{
+  "name": "projet3_ohmyfood",
+  "version": "1.0.0",
+  "description": "projet OC oh my food",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./dev/main.scss:.public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YoannHuot/projet3_ohmyfood.git"
+  },
+  "author": "YoannHuot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YoannHuot/projet3_ohmyfood/issues"
+  },
+  "homepage": "https://github.com/YoannHuot/projet3_ohmyfood#readme"
+}
