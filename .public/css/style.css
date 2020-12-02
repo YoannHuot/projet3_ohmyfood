@@ -1,8 +1,137 @@
+/* essayer de faire une mixin pour la couleur Darken dans le header */
+/* essayer de faire une mixin pour la couleur Darken dans le header */
 body {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  font-family: "Roboto", sans-serif;
   max-width: 375px;
+}
+
+/* HEADER */
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #F6F6F6;
+}
+header nav {
+  display: flex;
+  height: 16%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: relative;
+  z-index: 999;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.43);
+}
+header nav .logo {
+  height: 50%;
+  width: 50%;
+}
+header nav .logo img {
+  object-fit: cover;
+  width: 100%;
+}
+header .nav_button {
+  position: absolute;
+  top: 30px;
+  left: 15px;
+}
+header .nav_button i {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+}
+header ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  height: 12.5%;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  background-color: #e4e4e4;
+}
+header ul .header_nav_picto {
+  display: flex;
+  height: 40%;
+  width: 20%;
+  margin-left: 20%;
+  justify-content: center;
+  opacity: 0.8;
+}
+header ul .header_nav_input {
+  display: flex;
+  height: 40%;
+  width: 70%;
+}
+header ul::placeholder {
+  text-decoration: none;
+  background-color: white;
+  background-color: #e4e4e4;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  font-weight: bold;
+  background-clip: content-box;
+  width: 100%;
+}
+header ul input {
+  display: flex;
+  text-decoration: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  background-color: #e4e4e4;
+  opacity: 0.8;
+  font-size: 1em;
+  font-weight: bold;
+}
+header h2, header h3 {
+  display: flex;
+  text-align: center;
+}
+header h2 {
+  width: 70%;
+  margin: 0px auto;
+  margin-top: 1em;
+}
+header h3 {
+  font-weight: initial;
+}
+header button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  height: 50px;
+  width: 220px;
+  border-radius: 2em;
+  border: none;
+  font-family: "roboto";
+  background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
+  box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
+}
+header button a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+}
+
+.main_container {
+  display: flex;
+}
+
+footer {
+  display: flex;
+  height: 198px;
+  width: 100%;
+  background: #353535;
+  color: white;
+}
+footer ul {
+  list-style: none;
+}
+footer li {
+  padding-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
