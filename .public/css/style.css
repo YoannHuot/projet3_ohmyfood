@@ -1,11 +1,12 @@
-/* essayer de faire une mixin pour la couleur Darken dans le header */
-/* essayer de faire une mixin pour la couleur Darken dans le header */
 body {
   font-family: "Roboto", sans-serif;
   max-width: 375px;
 }
 
-/* HEADER */
+.main_container {
+  display: flex;
+}
+
 header {
   height: 400px;
   width: 100%;
@@ -32,7 +33,7 @@ header nav .logo img {
 }
 header .nav_button {
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 15px;
 }
 header .nav_button i {
@@ -40,6 +41,33 @@ header .nav_button i {
   font-weight: bold;
   color: black;
 }
+
+footer {
+  display: flex;
+  height: 198px;
+  width: 100%;
+  background: #353535;
+  color: white;
+}
+footer ul {
+  list-style: none;
+}
+footer ul .footer_logo {
+  font-family: "Shrikhand";
+}
+footer ul li {
+  padding-top: 10px;
+}
+footer ul li .fas {
+  width: 20px;
+  height: 20px;
+  padding-right: 10px;
+}
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
 header ul {
   display: flex;
   list-style: none;
@@ -49,6 +77,7 @@ header ul {
   justify-content: center;
   margin: 0px;
   padding: 0px;
+  padding-left: 0%;
   background-color: #e4e4e4;
 }
 header ul .header_nav_picto {
@@ -97,7 +126,10 @@ header h2 {
 header h3 {
   font-weight: initial;
 }
-header button {
+header a {
+  text-decoration: none;
+}
+header a button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,29 +141,99 @@ header button {
   font-family: "roboto";
   background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
   box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
-}
-header button a {
-  text-decoration: none;
   color: white;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
-.main_container {
-  display: flex;
+section h2 {
+  margin-top: 50px;
 }
-
-footer {
-  display: flex;
-  height: 198px;
-  width: 100%;
-  background: #353535;
-  color: white;
-}
-footer ul {
+section ul {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: auto;
+  height: 75px;
+  background-color: #F6F6F6;
+  border-radius: 1.25em;
+  box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
+  margin-top: 25px;
+  padding-left: 0px;
 }
-footer li {
-  padding-top: 10px;
+section ul .section_number {
+  display: flex;
+  position: absolute;
+  left: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: #9356DC;
+  color: white;
+  border-radius: 15px;
+}
+section ul .section_text {
+  width: 220px;
+  font-weight: bold;
+}
+section ul .fas {
+  font-size: 1.2em;
+  color: #777777;
+  padding-left: 2em;
+}
+
+.container_article a {
+  text-decoration: none;
+}
+.container_article article {
+  height: 255px;
+  margin: 15px;
+  font-size: 0.85em;
+  box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
+  border-radius: 1.5em 1.5em 1.5em 1.5em;
+}
+.container_article article img {
+  display: flex;
+  object-fit: cover;
+  border-radius: 1.5em 1.5em 0em 0em;
+  width: 100%;
+  height: 175px;
+  padding-bottom: 0.5em;
+}
+.container_article article .article_content {
+  display: flex;
+  align-items: center;
+}
+.container_article article .article_content .article_content_text {
+  width: 80%;
+}
+.container_article article h5 {
+  font-size: 1.3em;
+  color: black;
+  margin: 5px 0px 0px 15px;
+}
+.container_article article p {
+  color: black;
+  font-size: 1.1em;
+  margin: 5px 0px 0px 15px;
+}
+.container_article article i {
+  display: flex;
+  width: 20%;
+  justify-content: center;
+}
+.container_article article .far {
+  font-size: 1.5em;
+}
+
+@font-face {
+  font-family: "Shrikhand";
+  src: url("Shrikhand-Regular.otf");
+}
+body {
+  margin: 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
