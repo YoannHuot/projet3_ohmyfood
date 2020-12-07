@@ -1,0 +1,27 @@
+footer { 
+    display: flex;
+    height: 198px;
+    width: 100%;
+    background: $color-footer;
+    color: white;
+
+    & ul { 
+        list-style: none;
+        & .footer_logo { 
+           font-family: $font-title;
+        }
+        & li { 
+            padding-top : 10px;
+            & .fas { 
+                width: 20px;
+                height: 20px;
+                padding-right: 10px;
+            }
+            & a { 
+                text-decoration: none;
+                color: white;
+            }
+        }        
+     }
+}
+       
