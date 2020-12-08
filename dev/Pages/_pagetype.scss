@@ -66,7 +66,7 @@
     }
 }
 
-@media (min-width: 728px) {
+@media (min-width: 1024px) {
     .main_container { 
         flex-direction: row ;
         flex-wrap: wrap;
@@ -77,8 +77,13 @@
         }
 
         & .main_container_box { 
-            padding: 2em;
-            width: 28%;
+            padding: 0em 1em 0em 1em;
+            width: 30%;
+
+            & .main_container_box_content { 
+                width: 100%;
+                height: 100px;
+            }
         }
     }
 }
