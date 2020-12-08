@@ -9,6 +9,7 @@ footer {
         list-style: none;
         & .footer_logo { 
            font-family: $font-title;
+           padding-bottom: 10px;
         }
         & li { 
             padding-top : 10px;

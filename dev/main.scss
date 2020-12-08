@@ -1,13 +1,8 @@
 @import "./Utils/variables";
+@import "./Utils/fonts";
+@import "./Utils/mixins";
+@import "./Base/body";
 @import "./Base/header";
 @import "./Base/footer";
 @import "./Pages/index";
-
-@font-face {
-    font-family: 'Shrikhand';    
-    src : url('Shrikhand-Regular.otf');
-}
-
-body { 
-    margin: 0px;
-}
+@import "./Pages/pagetype";

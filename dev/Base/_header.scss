@@ -1,17 +1,8 @@
-body { 
-    font-family: $font-text;
-    max-width: 375px;
-}
-
-.main_container { 
-    display: flex;
-}
-
 header { 
-    height: 400px;
+    position: relative;
+    height: auto;
     width: 100%;
     background-color: $color-background;
-
 
     & nav { 
     display: flex;
@@ -28,6 +19,7 @@ header {
         & .logo { 
                 height: 50%;
                 width: 50%;
+                max-width: 350px;
 
                 & img { 
                     object-fit: cover;

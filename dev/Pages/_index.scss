@@ -1,30 +1,37 @@
 header { 
+    width: 100%;
+    height: auto;
+
+    & .header_section { 
+        padding-bottom: 70px;
+    }
 
     & ul { 
+        
         display: flex;
         list-style: none;
         width: 100%;       
-        height: 12.5%;
-        align-items: center;
-        justify-content: center;
+        height: 50px;
+        @include center;
         margin: 0px;
         padding: 0px;
         padding-left: 0%;
         background-color: $darken-background;
 
-            & .header_nav_picto { 
+            & .header_section_picto { 
                 display: flex;
                 height: 40%;
-                width: 20%;
-                margin-left: 20%;
-                justify-content: center;
+                @include center;
                 opacity: 0.8;
+                padding-right: 20px;
                 }
             
-            & .header_nav_input { 
+            & .header_section_input { 
                 display: flex;
                 height: 40%;
-                width: 70%;
+                max-width: 150px;
+                margin-left: 0 auto;
+                margin-right: 0 auto;
             }
 
             &::placeholder { 
@@ -62,45 +69,50 @@ header {
         width: 70%;
         margin: 0px auto;
         margin-top: 1em;
+        justify-content: center;
     }
 
     & h3 { 
         font-weight: initial;
+        width: 90%;
+        margin: 0px auto;
+        margin-top:20px;
+        margin-bottom:25px;
+        justify-content: center;
     }
 
     & a { 
         text-decoration: none;
         
         & button { 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0px auto;
-            height: 50px;
-            width: 220px;
-            border-radius: 2em;
-            border: none;
-            font-family: "roboto";
-            background: linear-gradient(171deg, $color-secondary 3%, $color-primary 100%);
-            box-shadow: 0px 15px 26px -17px rgba(0,0,0,0.46);
-            color: white;
-            font-size: 1em;
+           @include mixin-button;
         }
     }
 }
 
-section { 
+.section_tuto { 
+    width: 100%;
+
+
     & h2 { 
+        margin-left: 10px;
         margin-top: 50px;
     }
 
+    & .section_tuto_color { 
+        background-color: lighten($color: $color-primary, $amount: 35%);
+    }
+
     & ul { 
+        margin-left:  auto;
+        margin-right:  auto;
+        position: relative;
         list-style: none;
+
         display: flex;
-        flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        width: auto;
+        width: 86%;
         height: 75px;
         background-color: $color-background;
         border-radius: 1.25em;
@@ -108,12 +120,11 @@ section {
         margin-top: 25px;
         padding-left: 0px;
 
-        & .section_number { 
+        & .section_tuto_number { 
             display: flex;
             position: absolute;
-            left: 0px;
-            align-items: center;
-            justify-content: center;
+            left: -10px;
+            @include center;
             width: 25px;
             height: 25px;
             background-color: $color-primary;
@@ -121,26 +132,42 @@ section {
             border-radius: 15px;
         }
 
-        & .section_text { 
+        & .section_tuto_text { 
+            display: flex;
             width: 220px;
-            font-weight: bold;
+            font-weight: bolder;
+            width: 200px;
         }
 
-        & .fas { 
+        & .fa-store { 
+            color: $color-primary;
+        }
+        & i { 
             font-size: 1.2em;
             color: darken($color: $color-background, $amount: 50%);
             padding-left: 2em;
+        
         }
     }
 }
 
 .container_article {     
 
+    margin-top: 50px;
+    padding-bottom: 45px;
+    background-color: $color-background;
+
+    & h2 { 
+        padding-top: 50px;
+        margin-left: 10px;
+    }
+
     & a { 
         text-decoration: none;
     }
 
     & article {
+        position: relative;
         height: 255px;
         margin: 15px;
         font-size: 0.85em;
@@ -185,8 +212,86 @@ section {
             & .far { 
                 font-size: 1.5em;
             }
+
+        & span { 
+            display: flex;
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            right: 15px;
+            top: 15px;
+            background-color: $color-third;
+            color: darken($color: $color-third, $amount: 35%);
+            font-weight: bolder;
+            @include center;
+
+        }
     }   
 }
 
 
+@media (min-width: 728px) {
+    .section_tuto {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: relative;
 
+        & h2 { 
+           width: 100%;
+            }
+            & ul { 
+            width: 25%;
+            height: 150px;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center ;
+
+                & .section_tuto_text { 
+                    width: auto;
+                    font-size: 1.2em;
+                    width: 90%;
+                    text-align: center;
+                    justify-content: center;
+                }
+                & .section_tuto_number { 
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 0;
+                    right: 0;
+                    top: -17px;
+
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 9em;
+                }
+
+                & i { 
+                    margin-left: 0 auto;
+                    margin-right: 0 auto;
+                    padding: 1em 0em 0em 0em;   
+                    font-size: 1.5em;
+                }
+            }
+    }
+
+    .container_article { 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include center;
+
+        & h2 { 
+           width: 100%;
+        }
+
+        & article { 
+            width: 45%;
+            height: 300px;
+
+            & img { 
+                height: 220px;
+            }
+        }
+    }
+}
