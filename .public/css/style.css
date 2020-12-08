@@ -1,14 +1,16 @@
+/* Variables */
+@font-face {
+  font-family: "Shrikhand";
+  src: url("Shrikhand-Regular.otf");
+}
 body {
   font-family: "Roboto", sans-serif;
-  max-width: 375px;
-}
-
-.main_container {
-  display: flex;
+  margin: 0px;
 }
 
 header {
-  height: 400px;
+  position: relative;
+  height: auto;
   width: 100%;
   background-color: #F6F6F6;
 }
@@ -26,6 +28,7 @@ header nav {
 header nav .logo {
   height: 50%;
   width: 50%;
+  max-width: 350px;
 }
 header nav .logo img {
   object-fit: cover;
@@ -54,6 +57,7 @@ footer ul {
 }
 footer ul .footer_logo {
   font-family: "Shrikhand";
+  padding-bottom: 10px;
 }
 footer ul li {
   padding-top: 10px;
@@ -68,30 +72,39 @@ footer ul li a {
   color: white;
 }
 
+header {
+  width: 100%;
+  height: auto;
+}
+header .header_section {
+  padding-bottom: 70px;
+}
 header ul {
   display: flex;
   list-style: none;
   width: 100%;
-  height: 12.5%;
-  align-items: center;
+  height: 50px;
   justify-content: center;
+  align-items: center;
   margin: 0px;
   padding: 0px;
   padding-left: 0%;
   background-color: #e4e4e4;
 }
-header ul .header_nav_picto {
+header ul .header_section_picto {
   display: flex;
   height: 40%;
-  width: 20%;
-  margin-left: 20%;
   justify-content: center;
+  align-items: center;
   opacity: 0.8;
+  padding-right: 20px;
 }
-header ul .header_nav_input {
+header ul .header_section_input {
   display: flex;
   height: 40%;
-  width: 70%;
+  max-width: 150px;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
 }
 header ul::placeholder {
   text-decoration: none;
@@ -122,9 +135,15 @@ header h2 {
   width: 70%;
   margin: 0px auto;
   margin-top: 1em;
+  justify-content: center;
 }
 header h3 {
   font-weight: initial;
+  width: 90%;
+  margin: 0px auto;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  justify-content: center;
 }
 header a {
   text-decoration: none;
@@ -145,16 +164,25 @@ header a button {
   font-size: 1em;
 }
 
-section h2 {
+.section_tuto {
+  width: 100%;
+}
+.section_tuto h2 {
+  margin-left: 10px;
   margin-top: 50px;
 }
-section ul {
+.section_tuto .section_tuto_color {
+  background-color: #f2eafb;
+}
+.section_tuto ul {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
   list-style: none;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: auto;
+  width: 86%;
   height: 75px;
   background-color: #F6F6F6;
   border-radius: 1.25em;
@@ -162,32 +190,47 @@ section ul {
   margin-top: 25px;
   padding-left: 0px;
 }
-section ul .section_number {
+.section_tuto ul .section_tuto_number {
   display: flex;
   position: absolute;
-  left: 0px;
-  align-items: center;
+  left: -10px;
   justify-content: center;
+  align-items: center;
   width: 25px;
   height: 25px;
   background-color: #9356DC;
   color: white;
   border-radius: 15px;
 }
-section ul .section_text {
+.section_tuto ul .section_tuto_text {
+  display: flex;
   width: 220px;
-  font-weight: bold;
+  font-weight: bolder;
+  width: 200px;
 }
-section ul .fas {
+.section_tuto ul .fa-store {
+  color: #9356DC;
+}
+.section_tuto ul i {
   font-size: 1.2em;
   color: #777777;
   padding-left: 2em;
 }
 
+.container_article {
+  margin-top: 50px;
+  padding-bottom: 45px;
+  background-color: #F6F6F6;
+}
+.container_article h2 {
+  padding-top: 50px;
+  margin-left: 10px;
+}
 .container_article a {
   text-decoration: none;
 }
 .container_article article {
+  position: relative;
   height: 255px;
   margin: 15px;
   font-size: 0.85em;
@@ -227,13 +270,165 @@ section ul .fas {
 .container_article article .far {
   font-size: 1.5em;
 }
-
-@font-face {
-  font-family: "Shrikhand";
-  src: url("Shrikhand-Regular.otf");
+.container_article article span {
+  display: flex;
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  right: 15px;
+  top: 15px;
+  background-color: #99E2D0;
+  color: #2c9c81;
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
 }
-body {
-  margin: 0px;
+
+@media (min-width: 728px) {
+  .section_tuto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .section_tuto h2 {
+    width: 100%;
+  }
+  .section_tuto ul {
+    width: 25%;
+    height: 150px;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .section_tuto ul .section_tuto_text {
+    width: auto;
+    font-size: 1.2em;
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+  }
+  .section_tuto ul .section_tuto_number {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: -17px;
+    width: 35px;
+    height: 35px;
+    border-radius: 9em;
+  }
+  .section_tuto ul i {
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    padding: 1em 0em 0em 0em;
+    font-size: 1.5em;
+  }
+
+  .container_article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .container_article h2 {
+    width: 100%;
+  }
+  .container_article article {
+    width: 45%;
+    height: 300px;
+  }
+  .container_article article img {
+    height: 220px;
+  }
+}
+.header_picture {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  margin-top: 220px;
+  border-radius: 2em;
+  padding: 0px 15px 0px 15px;
+}
+.main_container .main_container_title {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.main_container .main_container_title h2 {
+  margin-left: 10px;
+  font-family: "Shrikhand";
+  font-size: 1.5em;
+}
+.main_container .main_container_title .far {
+  font-size: 1.3em;
+}
+.main_container .main_container_box {
+  display: flex;
+  flex-direction: column;
+}
+.main_container .main_container_box .main_container_box_content {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  margin-bottom: 17px;
+  border-radius: 1em;
+  box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
+  height: 70px;
+  justify-content: center;
+}
+.main_container .main_container_box .main_container_box_content h5 {
+  margin: 5px 0px 0px 15px;
+  font-size: 1.2em;
+}
+.main_container .main_container_box .main_container_box_content p {
+  display: flex;
+  margin: 5px 0px 0px 15px;
+  width: 90%;
+  justify-content: space-between;
+}
+.main_container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  height: 50px;
+  width: 220px;
+  border-radius: 2em;
+  border: none;
+  font-family: "roboto";
+  background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
+  box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
+  color: white;
+  font-size: 1em;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 728px) {
+  .main_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main_container h4 {
+    width: 80%;
+  }
+  .main_container .main_container_box {
+    padding: 2em;
+    width: 28%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
