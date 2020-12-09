@@ -14,7 +14,7 @@
     border-radius: 2em;
     padding: 0px 15px 0px 15px;
 
-    & .main_container_title { 
+    &_title { 
         width: 90%;
         display: flex;
         flex-direction: row;
@@ -29,14 +29,70 @@
 
         & .far { 
             font-size: 1.3em;
-        }
+            }
     }
 
-    & .main_container_box { 
+    &_box { 
         display: flex;
         flex-direction: column;
-        
-        & .main_container_box_content { 
+
+        :nth-child(2) { 
+            opacity: 0;
+            transition-property: opacity;
+            animation: fadein 2s;
+            -moz-animation: fadein 2s; 
+            -webkit-animation: fadein 2s; 
+            -o-animation: fadein 2s; 
+    
+            -webkit-animation-delay: 0.5s;
+            -moz-animation-delay: 0.5s;
+             -ms-animation-delay: 0.5s;
+              -o-animation-delay: 0.5s;
+                 animation-delay: 0.5s;
+                 animation-fill-mode: both;
+        }
+
+        :nth-child(3) { 
+            opacity: 0;
+            transition-property: opacity;
+            animation: fadein 2s;
+            -moz-animation: fadein 2s; 
+            -webkit-animation: fadein 2s; 
+            -o-animation: fadein 2s; 
+    
+            -webkit-animation-delay: 0.7s;
+            -moz-animation-delay: 0.7s;
+             -ms-animation-delay: 0.7s;
+              -o-animation-delay: 0.7s;
+                 animation-delay: 0.7s;
+                 animation-fill-mode: both;
+        }
+
+        :nth-child(4) { 
+            opacity: 0;
+            transition-property: opacity;
+            animation: fadein 2s;
+            -moz-animation: fadein 2s; 
+            -webkit-animation: fadein 2s; 
+            -o-animation: fadein 2s; 
+    
+            -webkit-animation-delay: 0.5s;
+            -moz-animation-delay: 0.9s;
+             -ms-animation-delay: 0.9s;
+              -o-animation-delay: 0.9s;
+                 animation-delay: 0.9s;
+                 animation-fill-mode: both;
+        }
+
+        & h4 { 
+            font-weight: initial;
+            width: 40px;
+            padding-bottom: 9px;
+            border-bottom: $color-third 3px solid;
+        }
+
+        &_content { 
+            position: relative;
             display: flex;
             flex-direction: column;
             background: white;
@@ -45,7 +101,46 @@
             box-shadow: $button-shadow;
             height: 70px;
             justify-content: center;
+            overflow: hidden;
 
+            &:hover .main_container_box_content_picto { 
+                transform:translateX(0%);
+                transform-origin: right;
+            }
+
+            &:hover .fas { 
+                transform: rotate(360deg);
+            }
+
+            & strong { 
+                margin-right: 0%;
+                transition-duration: 1s;
+            }
+
+            &:hover strong { 
+                margin-right: 15%;
+            }
+
+            &_picto { 
+                display: flex;
+                position: absolute;
+                right: 0;
+                height: 100%;
+                width: 15%;
+                background-color: $color-third;
+                color: white;
+                font-size: 2em;
+                @include center;
+                border-radius: 0em 0.5em 0.5em 0em;   
+                transform:translateX(100%);
+                transition-duration: 1s;
+
+                & i { 
+                    transform:  rotate(0deg);
+                    transition-duration: 1s;
+                }
+            
+            }
                 & h5 { 
                     margin: 5px 0px 0px 15px;
                     font-size: 1.2em;
@@ -73,7 +168,7 @@
         justify-content: center;
 
         & h4 { 
-            width: 80%;
+            width: 50px;
         }
 
         & .main_container_box { 

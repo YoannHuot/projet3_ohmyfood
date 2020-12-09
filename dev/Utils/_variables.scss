@@ -12,3 +12,14 @@ $color-footer: #353535;
 
 $font-title: 'Shrikhand'; 
 $font-text: 'Roboto', sans-serif;
+
+
+/* hover */ 
+.far { 
+    &:hover { 
+            font-weight: 999;
+            background: linear-gradient(171deg, $color-secondary 3%, $color-primary 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    }
+}
