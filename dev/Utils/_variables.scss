@@ -19,7 +19,7 @@ $font-text: 'Roboto', sans-serif;
     &:hover { 
             font-weight: 999;
             background: linear-gradient(171deg, $color-secondary 3%, $color-primary 100%);
-            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
     }
 }
