@@ -35,10 +35,9 @@
     &_box { 
         display: flex;
         flex-direction: column;
-
+        
         :nth-child(2) { 
             opacity: 0;
-            transition-property: opacity;
             animation: fadein 2s;
             -moz-animation: fadein 2s; 
             -webkit-animation: fadein 2s; 
