@@ -3,8 +3,8 @@
 .far:hover {
   font-weight: 999;
   background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 @font-face {
