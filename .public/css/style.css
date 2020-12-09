@@ -1,7 +1,50 @@
 /* Variables */
+/* hover */
+.far:hover {
+  font-weight: 999;
+  background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @font-face {
   font-family: "Shrikhand";
   src: url("Shrikhand-Regular.otf");
+}
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-moz-keyframes fadein {
+  /* sur Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* sur Safari et Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* sur Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -36,8 +79,7 @@ header nav .logo img {
 }
 header .nav_button {
   position: absolute;
-  top: 20px;
-  left: 15px;
+  left: 25px;
 }
 header .nav_button i {
   font-size: 1.5em;
@@ -162,6 +204,12 @@ header a button {
   box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
   color: white;
   font-size: 1em;
+  transform: scale(1);
+  transition: 0.2s;
+}
+header a button:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 15px 35px -17px rgba(0, 0, 0, 0.46);
 }
 
 .section_tuto {
@@ -359,26 +407,74 @@ header a button {
   border-radius: 2em;
   padding: 0px 15px 0px 15px;
 }
-.main_container .main_container_title {
+.main_container_title {
   width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.main_container .main_container_title h2 {
+.main_container_title h2 {
   margin-left: 10px;
   font-family: "Shrikhand";
   font-size: 1.5em;
 }
-.main_container .main_container_title .far {
+.main_container_title .far {
   font-size: 1.3em;
 }
-.main_container .main_container_box {
+.main_container_box {
   display: flex;
   flex-direction: column;
 }
-.main_container .main_container_box .main_container_box_content {
+.main_container_box :nth-child(2) {
+  opacity: 0;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -webkit-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -ms-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+.main_container_box :nth-child(3) {
+  opacity: 0;
+  transition-property: opacity;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -webkit-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  -ms-animation-delay: 0.7s;
+  -o-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+  animation-fill-mode: both;
+}
+.main_container_box :nth-child(4) {
+  opacity: 0;
+  transition-property: opacity;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -webkit-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.9s;
+  -ms-animation-delay: 0.9s;
+  -o-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+  animation-fill-mode: both;
+}
+.main_container_box h4 {
+  font-weight: initial;
+  width: 40px;
+  padding-bottom: 9px;
+  border-bottom: #99E2D0 3px solid;
+}
+.main_container_box_content {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: white;
@@ -387,12 +483,46 @@ header a button {
   box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
   height: 70px;
   justify-content: center;
+  overflow: hidden;
 }
-.main_container .main_container_box .main_container_box_content h5 {
+.main_container_box_content:hover .main_container_box_content_picto {
+  transform: translateX(0%);
+  transform-origin: right;
+}
+.main_container_box_content:hover .fas {
+  transform: rotate(360deg);
+}
+.main_container_box_content strong {
+  margin-right: 0%;
+  transition-duration: 1s;
+}
+.main_container_box_content:hover strong {
+  margin-right: 15%;
+}
+.main_container_box_content_picto {
+  display: flex;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 15%;
+  background-color: #99E2D0;
+  color: white;
+  font-size: 2em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0em 0.5em 0.5em 0em;
+  transform: translateX(100%);
+  transition-duration: 1s;
+}
+.main_container_box_content_picto i {
+  transform: rotate(0deg);
+  transition-duration: 1s;
+}
+.main_container_box_content h5 {
   margin: 5px 0px 0px 15px;
   font-size: 1.2em;
 }
-.main_container .main_container_box .main_container_box_content p {
+.main_container_box_content p {
   display: flex;
   margin: 5px 0px 0px 15px;
   width: 90%;
@@ -412,22 +542,32 @@ header a button {
   box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
   color: white;
   font-size: 1em;
+  transform: scale(1);
+  transition: 0.2s;
   margin-top: 25px;
   margin-bottom: 25px;
 }
+.main_container button:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 15px 35px -17px rgba(0, 0, 0, 0.46);
+}
 
-@media (min-width: 728px) {
+@media (min-width: 1024px) {
   .main_container {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
   .main_container h4 {
-    width: 80%;
+    width: 50px;
   }
   .main_container .main_container_box {
-    padding: 2em;
-    width: 28%;
+    padding: 0em 1em 0em 1em;
+    width: 30%;
+  }
+  .main_container .main_container_box .main_container_box_content {
+    width: 100%;
+    height: 100px;
   }
 }
 
