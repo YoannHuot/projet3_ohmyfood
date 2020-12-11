@@ -21,5 +21,16 @@ $font-text: 'Roboto', sans-serif;
             background: linear-gradient(171deg, $color-secondary 3%, $color-primary 100%);
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
+            animation-name: fadein 9s;
+    }
+}
+
+@for $i from 1 through 6 { 
+    .main_container_box:nth-child(#{$i}) { 
+        animation-name: fadein;
+        animation-duration: 2s;
+        animation-delay: #{$i/6}s; 
+        animation-fill-mode: both;
+        opacity: 0;
     }
 }

@@ -4,7 +4,7 @@
   "description": "projet OC oh my food",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./dev/main.scss:.public/css/style.css"
+    "sass": "sass --watch ./dev/main.scss:./public/css/style.css"
   },
   "repository": {
     "type": "git",

@@ -14,152 +14,118 @@
     border-radius: 2em;
     padding: 0px 15px 0px 15px;
 
+    & button { 
+        @include mixin-button;
+        margin-top: 25px; 
+        margin-bottom: 25px;
+    }
+
     &_title { 
         width: 90%;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-
         & h2 { 
             margin-left: 10px;
             font-family: $font-title;
             font-size: 1.5em;
         }
-
         & .far { 
             font-size: 1.3em;
             }
-    }
-
+        }
     &_box { 
         display: flex;
         flex-direction: column;
-        
-        :nth-child(2) { 
-            opacity: 0;
-            animation: fadein 2s;
-            -moz-animation: fadein 2s; 
-            -webkit-animation: fadein 2s; 
-            -o-animation: fadein 2s; 
-    
-            -webkit-animation-delay: 0.5s;
-            -moz-animation-delay: 0.5s;
-             -ms-animation-delay: 0.5s;
-              -o-animation-delay: 0.5s;
-                 animation-delay: 0.5s;
-                 animation-fill-mode: both;
-        }
-
-        :nth-child(3) { 
-            opacity: 0;
-            transition-property: opacity;
-            animation: fadein 2s;
-            -moz-animation: fadein 2s; 
-            -webkit-animation: fadein 2s; 
-            -o-animation: fadein 2s; 
-    
-            -webkit-animation-delay: 0.7s;
-            -moz-animation-delay: 0.7s;
-             -ms-animation-delay: 0.7s;
-              -o-animation-delay: 0.7s;
-                 animation-delay: 0.7s;
-                 animation-fill-mode: both;
-        }
-
-        :nth-child(4) { 
-            opacity: 0;
-            transition-property: opacity;
-            animation: fadein 2s;
-            -moz-animation: fadein 2s; 
-            -webkit-animation: fadein 2s; 
-            -o-animation: fadein 2s; 
-    
-            -webkit-animation-delay: 0.5s;
-            -moz-animation-delay: 0.9s;
-             -ms-animation-delay: 0.9s;
-              -o-animation-delay: 0.9s;
-                 animation-delay: 0.9s;
-                 animation-fill-mode: both;
-        }
-
         & h4 { 
             font-weight: initial;
             width: 40px;
             padding-bottom: 9px;
             border-bottom: $color-third 3px solid;
         }
-
         &_content { 
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            background: white;
-            margin-bottom: 17px; 
+            display:grid;
+            grid-template-columns: 43% 43% 14%;
+            grid-template-rows: 35px 35px;
+            gap: 0px 0px;
+            width: 90%;
+            align-items: center;
             border-radius: 1em;
-            box-shadow: $button-shadow;
-            height: 70px;
-            justify-content: center;
             overflow: hidden;
-
-            &:hover .main_container_box_content_picto { 
-                transform:translateX(0%);
-                transform-origin: right;
-            }
-
-            &:hover .fas { 
+            
+            background-color: white;
+            margin: 10px 10px 10px 10px;    
+            &:hover i { 
                 transform: rotate(360deg);
             }
-
-            & strong { 
-                margin-right: 0%;
-                transition-duration: 1s;
+            &:hover .main_container_box_content_picto { 
+                transform: translateX(-60px);
             }
-
-            &:hover strong { 
-                margin-right: 15%;
+            &:hover span { 
+                transform: translateX(-60px);
             }
-
-            &_picto { 
-                display: flex;
-                position: absolute;
-                right: 0;
-                height: 100%;
-                width: 15%;
-                background-color: $color-third;
-                color: white;
-                font-size: 2em;
-                @include center;
-                border-radius: 0em 0.5em 0.5em 0em;   
-                transform:translateX(100%);
-                transition-duration: 1s;
-
-                & i { 
-                    transform:  rotate(0deg);
-                    transition-duration: 1s;
-                }
+            &:hover p { 
+                width: 60%;
+            }
+            &:hover h5 { 
+                width: 80%;
+            }
             
-            }
                 & h5 { 
-                    margin: 5px 0px 0px 15px;
-                    font-size: 1.2em;
+                    grid-row: 1;
+                    grid-column: 1 / span 2;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 1.1em;
+                    padding-left: 15px;
+                    width: 90%;
+                    transition: 1s;
                 }
                 & p { 
-                    display: flex;
-                    margin: 5px 0px 0px 15px;
-                    width: 90%;
-                    justify-content: space-between;
+                    grid-row: 2;
+                    grid-column: 1 / span 2;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding-left: 15px;
+                    width: 80%;
+                    transition: 1s;
                 }
-            }
-    }
 
-    & button { 
-        @include mixin-button;
-        margin-top: 25px; 
-        margin-bottom: 25px;
+                & span { 
+                    grid-row: 2;
+                    grid-column: 3;
+                    transform: translateX(0px);
+                    transition: 1s;
+                    background-color: white;
+                    text-align: center;
+                    font-weight: bolder;
+                }
+
+                & .main_container_box_content_picto { 
+                    grid-row: 1 / span 2;
+                    grid-template-columns: 3;
+
+                    display: flex;
+                    background-color: $color-third;
+                    color: white;
+                    @include center;
+                    width: 60px;
+                    height: 100%;
+                    border-radius: 0em 1em 1em 0em;
+                    transform: translateX(1px);
+                    transition: 1s;
+                    & i { 
+                        font-size: 1.5em;
+                        transform-origin: rotate(0deg);
+                        transition: 1s;
+                    }
+                }
+        }
     }
 }
-
 @media (min-width: 1024px) {
     .main_container { 
         flex-direction: row ;
@@ -176,7 +142,6 @@
 
             & .main_container_box_content { 
                 width: 100%;
-                height: 100px;
             }
         }
     }
