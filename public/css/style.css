@@ -1,61 +1,4 @@
 /* Variables */
-/* hover */
-.far:hover {
-  font-weight: 999;
-  background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  animation-name: fadein 9s;
-}
-
-.main_container_box:nth-child(1) {
-  animation-name: fadein;
-  animation-duration: 2s;
-  animation-delay: 0.1666666667s;
-  animation-fill-mode: both;
-  opacity: 0;
-}
-
-.main_container_box:nth-child(2) {
-  animation-name: fadein;
-  animation-duration: 2s;
-  animation-delay: 0.3333333333s;
-  animation-fill-mode: both;
-  opacity: 0;
-}
-
-.main_container_box:nth-child(3) {
-  animation-name: fadein;
-  animation-duration: 2s;
-  animation-delay: 0.5s;
-  animation-fill-mode: both;
-  opacity: 0;
-}
-
-.main_container_box:nth-child(4) {
-  animation-name: fadein;
-  animation-duration: 2s;
-  animation-delay: 0.6666666667s;
-  animation-fill-mode: both;
-  opacity: 0;
-}
-
-.main_container_box:nth-child(5) {
-  animation-name: fadein;
-  animation-duration: 2s;
-  animation-delay: 0.8333333333s;
-  animation-fill-mode: both;
-  opacity: 0;
-}
-
-.main_container_box:nth-child(6) {
-  animation-name: fadein;
-  animation-duration: 2s;
-  animation-delay: 1s;
-  animation-fill-mode: both;
-  opacity: 0;
-}
-
 @font-face {
   font-family: "Shrikhand";
   src: url("Shrikhand-Regular.otf");
@@ -97,9 +40,50 @@
     opacity: 1;
   }
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes page-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+    position: fixed;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+    position: initial;
+  }
+}
+@keyframes loader-disappear {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
 body {
+  margin: 0 auto;
+  padding: 0;
   font-family: "Roboto", sans-serif;
-  margin: 0px;
+  height: 100vh;
+}
+body .pagenofooter {
+  max-width: 2000px;
+  margin: 0 auto;
+}
+body.page {
+  opacity: 0;
+  animation: page-appear 3s 3s;
+  animation-fill-mode: both;
 }
 
 header {
@@ -107,6 +91,7 @@ header {
   height: auto;
   width: 100%;
   background-color: #F6F6F6;
+  padding-bottom: 1px;
 }
 header nav {
   display: flex;
@@ -117,7 +102,7 @@ header nav {
   background-color: white;
   position: relative;
   z-index: 999;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.43);
 }
 header nav .logo {
   height: 50%;
@@ -165,12 +150,9 @@ footer ul li a {
   color: white;
 }
 
-header {
-  width: 100%;
-  height: auto;
-}
+/* HEADER */
 header .header_section {
-  padding-bottom: 70px;
+  padding-bottom: 20px;
 }
 header ul {
   display: flex;
@@ -196,8 +178,8 @@ header ul .header_section_input {
   display: flex;
   height: 40%;
   max-width: 150px;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 header ul::placeholder {
   text-decoration: none;
@@ -238,10 +220,8 @@ header h3 {
   margin-bottom: 25px;
   justify-content: center;
 }
-header a {
+header .header_section_button {
   text-decoration: none;
-}
-header a button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,19 +230,21 @@ header a button {
   width: 220px;
   border-radius: 2em;
   border: none;
-  font-family: "roboto";
   background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
   box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
   color: white;
   font-size: 1em;
   transform: scale(1);
   transition: 0.2s;
+  margin-bottom: 50px;
 }
-header a button:hover {
+header .header_section_button:hover {
   transform: scale(1.05);
-  box-shadow: 5px 15px 35px -17px rgba(0, 0, 0, 0.46);
+  box-shadow: 5px 15px 35px -10px rgba(0, 0, 0, 0.46);
+  background: linear-gradient(171deg, rgba(255, 121, 218, 0.88) 3%, rgba(147, 86, 220, 0.88) 100%);
 }
 
+/* TUTORIEL */
 .section_tuto {
   width: 100%;
 }
@@ -316,6 +298,7 @@ header a button:hover {
   padding-left: 2em;
 }
 
+/* CARDS RESTAURANT */
 .container_article {
   margin-top: 50px;
   padding-bottom: 45px;
@@ -335,6 +318,7 @@ header a button:hover {
   font-size: 0.85em;
   box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
   border-radius: 1.5em 1.5em 1.5em 1.5em;
+  cursor: pointer;
 }
 .container_article article img {
   display: flex;
@@ -368,6 +352,7 @@ header a button:hover {
 }
 .container_article article .far {
   font-size: 1.5em;
+  cursor: pointer;
 }
 .container_article article span {
   display: flex;
@@ -383,6 +368,7 @@ header a button:hover {
   align-items: center;
 }
 
+/* MEDIA QUERIES */
 @media (min-width: 728px) {
   .section_tuto {
     display: flex;
@@ -418,8 +404,8 @@ header a button:hover {
     border-radius: 9em;
   }
   .section_tuto ul i {
-    margin-left: 0 auto;
-    margin-right: 0 auto;
+    margin-left: 0;
+    margin-right: 0;
     padding: 1em 0em 0em 0em;
     font-size: 1.5em;
   }
@@ -442,6 +428,7 @@ header a button:hover {
     height: 220px;
   }
 }
+/* HEADER */
 .header_picture {
   position: absolute;
   z-index: -1;
@@ -450,6 +437,7 @@ header a button:hover {
   object-fit: cover;
 }
 
+/* E?TREES PLATS DESSERTS */
 .main_container {
   display: flex;
   flex-direction: column;
@@ -467,7 +455,6 @@ header a button:hover {
   width: 220px;
   border-radius: 2em;
   border: none;
-  font-family: "roboto";
   background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
   box-shadow: 0px 15px 26px -17px rgba(0, 0, 0, 0.46);
   color: white;
@@ -479,7 +466,8 @@ header a button:hover {
 }
 .main_container button:hover {
   transform: scale(1.05);
-  box-shadow: 5px 15px 35px -17px rgba(0, 0, 0, 0.46);
+  box-shadow: 5px 15px 35px -10px rgba(0, 0, 0, 0.46);
+  background: linear-gradient(171deg, rgba(255, 121, 218, 0.88) 3%, rgba(147, 86, 220, 0.88) 100%);
 }
 .main_container_title {
   width: 90%;
@@ -495,6 +483,7 @@ header a button:hover {
 }
 .main_container_title .far {
   font-size: 1.3em;
+  cursor: pointer;
 }
 .main_container_box {
   display: flex;
@@ -512,11 +501,13 @@ header a button:hover {
   grid-template-rows: 35px 35px;
   gap: 0px 0px;
   width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
   align-items: center;
   border-radius: 1em;
   overflow: hidden;
   background-color: white;
-  margin: 10px 10px 10px 10px;
 }
 .main_container_box_content:hover i {
   transform: rotate(360deg);
@@ -528,7 +519,7 @@ header a button:hover {
   transform: translateX(-60px);
 }
 .main_container_box_content:hover p {
-  width: 60%;
+  width: 75%;
 }
 .main_container_box_content:hover h5 {
   width: 80%;
@@ -565,7 +556,6 @@ header a button:hover {
 }
 .main_container_box_content .main_container_box_content_picto {
   grid-row: 1/span 2;
-  grid-template-columns: 3;
   display: flex;
   background-color: #99E2D0;
   color: white;
@@ -579,10 +569,59 @@ header a button:hover {
 }
 .main_container_box_content .main_container_box_content_picto i {
   font-size: 1.5em;
-  transform-origin: rotate(0deg);
   transition: 1s;
 }
 
+/* boucle apparition progressive des cards menu */
+.main_container_box:nth-child(1) {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 0.1666666667s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.main_container_box:nth-child(2) {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 0.3333333333s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.main_container_box:nth-child(3) {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.main_container_box:nth-child(4) {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 0.6666666667s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.main_container_box:nth-child(5) {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 0.8333333333s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.main_container_box:nth-child(6) {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+/* MEDIA QUERIES */
 @media (min-width: 1024px) {
   .main_container {
     flex-direction: row;
@@ -599,6 +638,48 @@ header a button:hover {
   .main_container .main_container_box .main_container_box_content {
     width: 100%;
   }
+}
+.circle {
+  position: fixed;
+  background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
+  font-size: 40px;
+  text-align: center;
+  line-height: 944px;
+  height: 100%;
+  width: 100%;
+  color: white;
+  animation: loader-disappear 3s 3s;
+  animation-fill-mode: both;
+}
+.circle .loader {
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  vertical-align: middle;
+  margin: 0px 15px 5px 0px;
+}
+.circle .loader.loader-quart {
+  position: relative;
+  border-radius: 35px;
+  border: 6px solid rgba(255, 255, 255, 0.5);
+}
+.circle .loader.loader-quart::after {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  bottom: -6px;
+  right: -6px;
+  content: "";
+  border-radius: 50px;
+  border: 6px solid transparent;
+  border-top: white 6px solid;
+  animation: spin 1s linear infinite;
+}
+
+.page {
+  opacity: 0;
+  animation: page-appear 3s 3s;
+  animation-fill-mode: both;
 }
 
 /*# sourceMappingURL=style.css.map */
