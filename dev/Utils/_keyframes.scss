@@ -1,3 +1,5 @@
+/* apparition page type opacité */ 
+
 @keyframes fadein {
     
     from {
@@ -9,8 +11,6 @@
         transform:translateY(0px);
     }
 }
-
-
 @-moz-keyframes fadein { /* sur Firefox */
     from {
         opacity:0;
@@ -36,6 +36,7 @@
     }
 }
 
+/* rotation picto check page type */ 
 
 @keyframes spin { 
     0% { 
@@ -48,6 +49,7 @@
     }
 }
 
+/* page loading & apparition index */ 
 
 @keyframes page-appear { 
    0% { 
