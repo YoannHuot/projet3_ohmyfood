@@ -1,4 +1,17 @@
 body { 
+    margin: 0 auto;
+    padding: 0;
     font-family: $font-text;
-    margin: 0px;
+    height: 100vh;
+
+    & .pagenofooter { 
+        max-width: 2000px;
+        margin: 0 auto;
+    }
+
+    &.page { 
+        opacity: 0;
+        animation: page-appear 3s 3s;
+        animation-fill-mode: both;
+    }
 }

@@ -1,0 +1,45 @@
+
+.circle { 
+    position: fixed;
+    background: linear-gradient(171deg, $color-secondary 3%, $color-primary 100%);
+    font-size: 40px;
+    text-align: center;
+    line-height: 944px;
+    height: 100%;
+    width: 100%;
+    color: white;
+    animation: loader-disappear 3s 3s;
+    animation-fill-mode: both;
+    
+    & .loader {
+        display: inline-block;
+        height: 35px;
+        width: 35px;
+        vertical-align: middle;
+        margin:0px 15px 5px 0px;
+        &.loader-quart { 
+            position: relative;
+            border-radius: 35px;
+            border:6px solid rgba(255,255,255, 0.5); 
+
+            &::after { 
+                position: absolute;
+                top: -6px;
+                left: -6px;
+                bottom: -6px;
+                right: -6px;
+                content:"";
+                border-radius: 50px;
+                border: 6px solid transparent;
+                border-top: white 6px solid;
+                animation: spin 1s linear infinite;
+            }
+        }
+    }
+}
+
+.page { 
+        opacity: 0;
+        animation: page-appear 3s 3s;
+        animation-fill-mode: both;
+    }

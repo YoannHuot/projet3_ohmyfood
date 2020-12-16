@@ -1,3 +1,5 @@
+/* HEADER */ 
+
 .header_picture { 
     position: absolute;
     z-index: -1;
@@ -5,6 +7,8 @@
     height: 275px;
     object-fit: cover;
 }
+
+/* E?TREES PLATS DESSERTS */ 
 
 .main_container { 
     display: flex;
@@ -19,7 +23,6 @@
         margin-top: 25px; 
         margin-bottom: 25px;
     }
-
     &_title { 
         width: 90%;
         display: flex;
@@ -33,6 +36,7 @@
         }
         & .far { 
             font-size: 1.3em;
+            cursor: pointer;
             }
         }
     &_box { 
@@ -50,12 +54,14 @@
             grid-template-rows: 35px 35px;
             gap: 0px 0px;
             width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 15px;
             align-items: center;
             border-radius: 1em;
             overflow: hidden;
             
             background-color: white;
-            margin: 10px 10px 10px 10px;    
             &:hover i { 
                 transform: rotate(360deg);
             }
@@ -66,7 +72,7 @@
                 transform: translateX(-60px);
             }
             &:hover p { 
-                width: 60%;
+                width: 75%;
             }
             &:hover h5 { 
                 width: 80%;
@@ -106,8 +112,6 @@
 
                 & .main_container_box_content_picto { 
                     grid-row: 1 / span 2;
-                    grid-template-columns: 3;
-
                     display: flex;
                     background-color: $color-third;
                     color: white;
@@ -119,27 +123,39 @@
                     transition: 1s;
                     & i { 
                         font-size: 1.5em;
-                        transform-origin: rotate(0deg);
                         transition: 1s;
                     }
                 }
+                
         }
     }
 }
+
+/* boucle apparition progressive des cards menu */
+
+@for $i from 1 through 6 { 
+    .main_container_box:nth-child(#{$i}) { 
+        animation-name: fadein;
+        animation-duration: 2s;
+        animation-delay: #{$i/6}s; 
+        animation-fill-mode: both;
+        opacity: 0;
+    }
+}
+
+/* MEDIA QUERIES */ 
+
 @media (min-width: 1024px) {
     .main_container { 
         flex-direction: row ;
         flex-wrap: wrap;
         justify-content: center;
-
         & h4 { 
             width: 50px;
         }
-
         & .main_container_box { 
             padding: 0em 1em 0em 1em;
             width: 30%;
-
             & .main_container_box_content { 
                 width: 100%;
             }

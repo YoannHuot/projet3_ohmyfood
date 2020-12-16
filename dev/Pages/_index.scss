@@ -1,63 +1,55 @@
+/* HEADER */ 
+
 header { 
-    width: 100%;
-    height: auto;
-
     & .header_section { 
-        padding-bottom: 70px;
+        padding-bottom: 20px;
     }
-
-    & ul { 
-        
-        display: flex;
-        list-style: none;
-        width: 100%;       
-        height: 50px;
-        @include center;
-        margin: 0px;
-        padding: 0px;
-        padding-left: 0%;
-        background-color: $darken-background;
-
-            & .header_section_picto { 
-                display: flex;
-                height: 40%;
-                @include center;
-                opacity: 0.8;
-                padding-right: 20px;
-                }
+        & ul { 
             
-            & .header_section_input { 
-                display: flex;
-                height: 40%;
-                max-width: 150px;
-                margin-left: 0 auto;
-                margin-right: 0 auto;
-            }
-
-            &::placeholder { 
-            text-decoration : none;
-            background-color: white;
+            display: flex;
+            list-style: none;
+            width: 100%;       
+            height: 50px;
+            @include center;
+            margin: 0px;
+            padding: 0px;
+            padding-left: 0%;
             background-color: $darken-background;
-            font-family     : $font-text;
-            border          : none;
-            font-weight     : bold;
-            background-clip : content-box;
-            width: 100%;
-            }
-
-            & input { 
-            display        : flex;
-            text-decoration: none;
-            border         : none;
-
-            height         : 100%;
-            width: 100%;
-
-            background-color: $darken-background;
-            opacity: 0.8;
-            font-size       : 1em;
-            font-weight     : bold;
-            }
+                & .header_section_picto { 
+                    display: flex;
+                    height: 40%;
+                    @include center;
+                    opacity: 0.8;
+                    padding-right: 20px;
+                    }
+                & .header_section_input { 
+                    display: flex;
+                    height: 40%;
+                    max-width: 150px;
+                    margin-left: 0 ;
+                    margin-right: 0 ;
+                }
+                &::placeholder { 
+                text-decoration : none;
+                background-color: white;
+                background-color: $darken-background;
+                font-family     : $font-text;
+                border          : none;
+                font-weight     : bold;
+                background-clip : content-box;
+                width: 100%;
+                }
+                & input { 
+                display        : flex;
+                text-decoration: none;
+                border         : none;
+                height         : 100%;
+                width: 100%;
+                background-color: $darken-background;
+                opacity: 0.8;
+                font-size       : 1em;
+                font-weight     : bold;
+                }
     }
 
     & h2, h3 { 
@@ -81,19 +73,17 @@ header {
         justify-content: center;
     }
 
-    & a { 
+    & .header_section_button { 
         text-decoration: none;
-        
-        & button { 
-           @include mixin-button;
-        }
+        @include mixin-button;
+        margin-bottom: 50px;
     }
 }
 
+/* TUTORIEL */ 
+
 .section_tuto { 
     width: 100%;
-
-
     & h2 { 
         margin-left: 10px;
         margin-top: 50px;
@@ -151,6 +141,9 @@ header {
     }
 }
 
+
+/* CARDS RESTAURANT */ 
+
 .container_article {     
 
     margin-top: 50px;
@@ -173,6 +166,7 @@ header {
         font-size: 0.85em;
         box-shadow: $button-shadow;
         border-radius: 1.5em 1.5em 1.5em 1.5em;
+        cursor: pointer;
         
             & img {
                 display      : flex;
@@ -211,6 +205,7 @@ header {
         }
             & .far { 
                 font-size: 1.5em;
+                cursor: pointer;
             }
 
         & span { 
@@ -230,6 +225,8 @@ header {
 }
 
 
+/* MEDIA QUERIES */
+
 @media (min-width: 728px) {
     .section_tuto {
         display: flex;
@@ -238,7 +235,7 @@ header {
         position: relative;
 
         & h2 { 
-           width: 100%;
+        width: 100%;
             }
             & ul { 
             width: 25%;
@@ -267,8 +264,8 @@ header {
                 }
 
                 & i { 
-                    margin-left: 0 auto;
-                    margin-right: 0 auto;
+                    margin-left: 0 ;
+                    margin-right: 0 ;
                     padding: 1em 0em 0em 0em;   
                     font-size: 1.5em;
                 }
@@ -282,7 +279,7 @@ header {
         @include center;
 
         & h2 { 
-           width: 100%;
+        width: 100%;
         }
 
         & article { 
