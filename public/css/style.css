@@ -1,8 +1,10 @@
+@charset "UTF-8";
 /* Variables */
 @font-face {
   font-family: "Shrikhand";
   src: url("Shrikhand-Regular.otf");
 }
+/* apparition page type opacité */
 @keyframes fadein {
   from {
     opacity: 0;
@@ -40,6 +42,7 @@
     opacity: 1;
   }
 }
+/* rotation picto check page type */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -48,6 +51,7 @@
     transform: rotate(360deg);
   }
 }
+/* page loading & apparition index */
 @keyframes page-appear {
   0% {
     opacity: 0;
@@ -680,6 +684,13 @@ header .header_section_button:hover {
   opacity: 0;
   animation: page-appear 3s 3s;
   animation-fill-mode: both;
+}
+
+.far:hover {
+  font-weight: 600;
+  background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 /*# sourceMappingURL=style.css.map */
