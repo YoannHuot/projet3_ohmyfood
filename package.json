@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/YoannHuot/projet3_ohmyfood/issues"
   },
-  "homepage": "https://github.com/YoannHuot/projet3_ohmyfood#readme"
+  "homepage": "https://github.com/YoannHuot/projet3_ohmyfood#readme",
+  "devDependencies": {
+    "prettier": "2.2.1"
+  }
 }

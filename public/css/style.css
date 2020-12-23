@@ -42,6 +42,23 @@
     opacity: 1;
   }
 }
+/* animation des pictos coeur */
+@keyframes fadein-picto {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeout-picto {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /* rotation picto check page type */
 @keyframes spin {
   0% {
@@ -80,14 +97,15 @@ body {
   font-family: "Roboto", sans-serif;
   height: 100vh;
 }
-body .pagenofooter {
-  max-width: 2000px;
+body .page {
   margin: 0 auto;
-}
-body.page {
   opacity: 0;
-  animation: page-appear 3s 3s;
+  animation: page-appear 2.8s 3.2s;
   animation-fill-mode: both;
+  position: fixed;
+}
+body .pagenofooter {
+  margin: 0 auto;
 }
 
 header {
@@ -135,7 +153,11 @@ footer {
   color: white;
 }
 footer ul {
+  width: 100%;
+  max-width: 1780px;
+  margin: 0px auto;
   list-style: none;
+  padding: 15px;
 }
 footer ul .footer_logo {
   font-family: "Shrikhand";
@@ -251,6 +273,8 @@ header .header_section_button:hover {
 /* TUTORIEL */
 .section_tuto {
   width: 100%;
+  max-width: 1780px;
+  margin: 0 auto;
 }
 .section_tuto h2 {
   margin-left: 10px;
@@ -299,14 +323,20 @@ header .header_section_button:hover {
 .section_tuto ul i {
   font-size: 1.2em;
   color: #777777;
-  padding-left: 2em;
+  padding-top: 1em;
 }
 
 /* CARDS RESTAURANT */
+.background_container_article {
+  width: 100%;
+  background-color: #F6F6F6;
+}
+
 .container_article {
+  margin: 0 auto;
   margin-top: 50px;
   padding-bottom: 45px;
-  background-color: #F6F6F6;
+  max-width: 1780px;
 }
 .container_article h2 {
   padding-top: 50px;
@@ -337,7 +367,7 @@ header .header_section_button:hover {
   align-items: center;
 }
 .container_article article .article_content .article_content_text {
-  width: 80%;
+  width: 90%;
 }
 .container_article article h5 {
   font-size: 1.3em;
@@ -348,11 +378,6 @@ header .header_section_button:hover {
   color: black;
   font-size: 1.1em;
   margin: 5px 0px 0px 15px;
-}
-.container_article article i {
-  display: flex;
-  width: 20%;
-  justify-content: center;
 }
 .container_article article .far {
   font-size: 1.5em;
@@ -406,12 +431,6 @@ header .header_section_button:hover {
     width: 35px;
     height: 35px;
     border-radius: 9em;
-  }
-  .section_tuto ul i {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 1em 0em 0em 0em;
-    font-size: 1.5em;
   }
 
   .container_article {
@@ -474,7 +493,8 @@ header .header_section_button:hover {
   background: linear-gradient(171deg, rgba(255, 121, 218, 0.88) 3%, rgba(147, 86, 220, 0.88) 100%);
 }
 .main_container_title {
-  width: 90%;
+  width: calc(100% - 60px);
+  min-width: 281px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -485,19 +505,16 @@ header .header_section_button:hover {
   font-family: "Shrikhand";
   font-size: 1.5em;
 }
-.main_container_title .far {
-  font-size: 1.3em;
-  cursor: pointer;
-}
 .main_container_box {
   display: flex;
   flex-direction: column;
 }
-.main_container_box h4 {
+.main_container_box h3 {
   font-weight: initial;
   width: 40px;
   padding-bottom: 9px;
   border-bottom: #99E2D0 3px solid;
+  font-size: 1em;
 }
 .main_container_box_content {
   display: grid;
@@ -514,7 +531,7 @@ header .header_section_button:hover {
   background-color: white;
 }
 .main_container_box_content:hover i {
-  transform: rotate(360deg);
+  animation: spin 1.2s;
 }
 .main_container_box_content:hover .main_container_box_content_picto {
   transform: translateX(-60px);
@@ -523,12 +540,12 @@ header .header_section_button:hover {
   transform: translateX(-60px);
 }
 .main_container_box_content:hover p {
-  width: 75%;
+  width: calc(90% - 60px);
 }
-.main_container_box_content:hover h5 {
-  width: 80%;
+.main_container_box_content:hover h4 {
+  width: calc(90% - 60px);
 }
-.main_container_box_content h5 {
+.main_container_box_content h4 {
   grid-row: 1;
   grid-column: 1/span 2;
   white-space: nowrap;
@@ -538,6 +555,8 @@ header .header_section_button:hover {
   padding-left: 15px;
   width: 90%;
   transition: 1s;
+  margin: 0px;
+  font-size: 1.1em;
 }
 .main_container_box_content p {
   grid-row: 2;
@@ -546,13 +565,12 @@ header .header_section_button:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   padding-left: 15px;
-  width: 80%;
+  width: 90%;
   transition: 1s;
 }
 .main_container_box_content span {
   grid-row: 2;
   grid-column: 3;
-  transform: translateX(0px);
   transition: 1s;
   background-color: white;
   text-align: center;
@@ -573,7 +591,6 @@ header .header_section_button:hover {
 }
 .main_container_box_content .main_container_box_content_picto i {
   font-size: 1.5em;
-  transition: 1s;
 }
 
 /* boucle apparition progressive des cards menu */
@@ -632,7 +649,7 @@ header .header_section_button:hover {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .main_container h4 {
+  .main_container h3 {
     width: 50px;
   }
   .main_container .main_container_box {
@@ -648,7 +665,7 @@ header .header_section_button:hover {
   background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
   font-size: 40px;
   text-align: center;
-  line-height: 944px;
+  line-height: 800px;
   height: 100%;
   width: 100%;
   color: white;
@@ -680,17 +697,47 @@ header .header_section_button:hover {
   animation: spin 1s linear infinite;
 }
 
-.page {
-  opacity: 0;
-  animation: page-appear 3s 3s;
-  animation-fill-mode: both;
-}
-
 .far:hover {
   font-weight: 600;
   background: linear-gradient(171deg, #FF79DA 3%, #9356DC 100%);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+}
+
+.animation_pictogramme {
+  position: relative;
+  width: 21px;
+  height: 21px;
+}
+.animation_pictogramme .far {
+  position: absolute;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.animation_pictogramme .fas {
+  position: absolute;
+  font-size: 1.3em;
+  cursor: pointer;
+  opacity: 0;
+}
+.animation_pictogramme:hover .fas {
+  animation: fadein-picto 1.2s;
+  animation-fill-mode: both;
+  cursor: pointer;
+  background: -moz-linear-gradient(top, #9356DC 0%, #FF79DA 100%);
+  background: -webkit-linear-gradient(top, #9356DC 0%, #FF79DA 100%);
+  background: linear-gradient(to bottom, #9356DC 0%, #FF79DA 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: font-weight ease-in-out 2s;
+}
+.animation_pictogramme:hover .far {
+  animation: fadeout-picto 0.2s;
+  animation-fill-mode: both;
+  background-position: 0 100%;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -84,6 +84,8 @@ header {
 
 .section_tuto { 
     width: 100%;
+    max-width: 1780px;
+    margin: 0 auto;
     & h2 { 
         margin-left: 10px;
         margin-top: 50px;
@@ -135,8 +137,7 @@ header {
         & i { 
             font-size: 1.2em;
             color: darken($color: $color-background, $amount: 50%);
-            padding-left: 2em;
-        
+            padding-top: 1em;
         }
     }
 }
@@ -144,11 +145,16 @@ header {
 
 /* CARDS RESTAURANT */ 
 
-.container_article {     
+.background_container_article { 
+    width: 100%;
+    background-color: $color-background;
+}
 
+.container_article {     
+    margin: 0 auto;
     margin-top: 50px;
     padding-bottom: 45px;
-    background-color: $color-background;
+    max-width: 1780px;
 
     & h2 { 
         padding-top: 50px;
@@ -183,7 +189,7 @@ header {
             
 
                 & .article_content_text { 
-                    width: 80%;
+                    width: 90%;
                 }
             }
 
@@ -197,12 +203,7 @@ header {
                 font-size: 1.1em;
                 margin: 5px 0px 0px 15px;
             }    
-        
-        & i { 
-            display: flex;
-            width: 20%;
-            justify-content: center;
-        }
+  
             & .far { 
                 font-size: 1.5em;
                 cursor: pointer;
@@ -223,7 +224,6 @@ header {
         }
     }   
 }
-
 
 /* MEDIA QUERIES */
 
@@ -261,13 +261,6 @@ header {
                     width: 35px;
                     height: 35px;
                     border-radius: 9em;
-                }
-
-                & i { 
-                    margin-left: 0 ;
-                    margin-right: 0 ;
-                    padding: 1em 0em 0em 0em;   
-                    font-size: 1.5em;
                 }
             }
     }

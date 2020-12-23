@@ -4,7 +4,7 @@
     background: linear-gradient(171deg, $color-secondary 3%, $color-primary 100%);
     font-size: 40px;
     text-align: center;
-    line-height: 944px;
+    line-height: 800px;
     height: 100%;
     width: 100%;
     color: white;
@@ -21,7 +21,6 @@
             position: relative;
             border-radius: 35px;
             border:6px solid rgba(255,255,255, 0.5); 
-
             &::after { 
                 position: absolute;
                 top: -6px;
@@ -37,9 +36,3 @@
         }
     }
 }
-
-.page { 
-        opacity: 0;
-        animation: page-appear 3s 3s;
-        animation-fill-mode: both;
-    }

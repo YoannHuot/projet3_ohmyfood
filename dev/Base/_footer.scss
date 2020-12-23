@@ -4,9 +4,12 @@ footer {
     width: 100%;
     background: $color-footer;
     color: white;
-
     & ul { 
+        width: 100%;
+        max-width: 1780px;
+        margin: 0px auto;
         list-style: none;
+        padding: 15px;
             & .footer_logo { 
             font-family: $font-title;
             padding-bottom: 10px;

@@ -10,6 +10,7 @@
 
 /* E?TREES PLATS DESSERTS */ 
 
+
 .main_container { 
     display: flex;
     flex-direction: column;
@@ -24,7 +25,8 @@
         margin-bottom: 25px;
     }
     &_title { 
-        width: 90%;
+        width : calc(100% - 60px);
+        min-width: 281px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -34,19 +36,17 @@
             font-family: $font-title;
             font-size: 1.5em;
         }
-        & .far { 
-            font-size: 1.3em;
-            cursor: pointer;
-            }
-        }
+
+    }
     &_box { 
         display: flex;
         flex-direction: column;
-        & h4 { 
+        & h3 { 
             font-weight: initial;
             width: 40px;
             padding-bottom: 9px;
             border-bottom: $color-third 3px solid;
+            font-size: 1em;
         }
         &_content { 
             display:grid;
@@ -63,7 +63,7 @@
             
             background-color: white;
             &:hover i { 
-                transform: rotate(360deg);
+                animation: spin 1.2s;
             }
             &:hover .main_container_box_content_picto { 
                 transform: translateX(-60px);
@@ -72,13 +72,13 @@
                 transform: translateX(-60px);
             }
             &:hover p { 
-                width: 75%;
+                width: calc(90% - 60px);
             }
-            &:hover h5 { 
-                width: 80%;
+            &:hover h4 { 
+                width: calc(90% - 60px);
             }
             
-                & h5 { 
+                & h4 { 
                     grid-row: 1;
                     grid-column: 1 / span 2;
                     white-space: nowrap;
@@ -88,6 +88,8 @@
                     padding-left: 15px;
                     width: 90%;
                     transition: 1s;
+                    margin:0px;
+                    font-size: 1.1em;
                 }
                 & p { 
                     grid-row: 2;
@@ -96,20 +98,18 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     padding-left: 15px;
-                    width: 80%;
+                    width: 90%;
                     transition: 1s;
                 }
 
                 & span { 
                     grid-row: 2;
                     grid-column: 3;
-                    transform: translateX(0px);
                     transition: 1s;
                     background-color: white;
                     text-align: center;
                     font-weight: bolder;
                 }
-
                 & .main_container_box_content_picto { 
                     grid-row: 1 / span 2;
                     display: flex;
@@ -123,7 +123,6 @@
                     transition: 1s;
                     & i { 
                         font-size: 1.5em;
-                        transition: 1s;
                     }
                 }
                 
@@ -150,7 +149,7 @@
         flex-direction: row ;
         flex-wrap: wrap;
         justify-content: center;
-        & h4 { 
+        & h3 { 
             width: 50px;
         }
         & .main_container_box { 

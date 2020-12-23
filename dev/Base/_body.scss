@@ -3,15 +3,17 @@ body {
     padding: 0;
     font-family: $font-text;
     height: 100vh;
+    & .page { 
+        margin: 0 auto;
+        opacity: 0;
+        animation: page-appear 2.8s 3.2s;
+        animation-fill-mode: both;
+        position: fixed;
+    }
 
     & .pagenofooter { 
-        max-width: 2000px;
         margin: 0 auto;
     }
 
-    &.page { 
-        opacity: 0;
-        animation: page-appear 3s 3s;
-        animation-fill-mode: both;
-    }
+
 }

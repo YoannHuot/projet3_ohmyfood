@@ -6,3 +6,39 @@
             -webkit-background-clip: text;
     }
 }
+
+.animation_pictogramme { 
+    position: relative;
+    width: 21px;
+    height: 21px;
+    & .far { 
+        position: absolute;
+        font-size: 1.3em;
+        cursor: pointer;
+        }
+    & .fas { 
+        position: absolute;
+        font-size: 1.3em;
+        cursor: pointer;
+        opacity: 0;
+    }
+    &:hover .fas{
+        animation: fadein-picto 1.2s;
+        animation-fill-mode: both;
+        cursor: pointer;
+        background:-moz-linear-gradient(top, $color-primary 0%, $color-secondary  100%); 
+        background: -webkit-linear-gradient(top, $color-primary 0%, $color-secondary  100%); 
+        background: linear-gradient(to bottom, $color-primary 0%, $color-secondary 100%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: font-weight ease-in-out 2s ;
+        }
+    &:hover .far{
+        animation: fadeout-picto 0.2s ;
+        animation-fill-mode: both;
+        background-position: 0 100%;
+        cursor: pointer;
+    }
+}
