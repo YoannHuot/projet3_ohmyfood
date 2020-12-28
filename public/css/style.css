@@ -73,10 +73,15 @@
   0% {
     opacity: 0;
     transform: translateY(100%);
+    position: fixed;
+  }
+  10% {
+    position: initial;
   }
   100% {
     opacity: 1;
     transform: translateY(0%);
+    position: initial;
   }
 }
 @keyframes loader-disappear {
