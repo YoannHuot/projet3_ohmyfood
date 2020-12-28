@@ -73,12 +73,10 @@
   0% {
     opacity: 0;
     transform: translateY(100%);
-    position: fixed;
   }
   100% {
     opacity: 1;
     transform: translateY(0%);
-    position: initial;
   }
 }
 @keyframes loader-disappear {
@@ -102,7 +100,6 @@ body .page {
   opacity: 0;
   animation: page-appear 2.8s 3.2s;
   animation-fill-mode: both;
-  position: fixed;
 }
 body .pagenofooter {
   margin: 0 auto;

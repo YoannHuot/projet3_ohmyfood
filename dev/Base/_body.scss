@@ -8,12 +8,9 @@ body {
         opacity: 0;
         animation: page-appear 2.8s 3.2s;
         animation-fill-mode: both;
-        position: fixed;
     }
 
     & .pagenofooter { 
         margin: 0 auto;
     }
-
-
 }
