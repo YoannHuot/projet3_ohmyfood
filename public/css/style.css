@@ -325,7 +325,6 @@ header .header_section_button:hover {
 .section_tuto ul i {
   font-size: 1.2em;
   color: #777777;
-  padding-top: 1em;
 }
 
 /* CARDS RESTAURANT */
@@ -400,7 +399,7 @@ header .header_section_button:hover {
 }
 
 /* MEDIA QUERIES */
-@media (min-width: 728px) {
+@media (min-width: 768px) {
   .section_tuto {
     display: flex;
     flex-direction: row;
@@ -416,6 +415,9 @@ header .header_section_button:hover {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+  }
+  .section_tuto ul i {
+    padding-top: 1em;
   }
   .section_tuto ul .section_tuto_text {
     width: auto;

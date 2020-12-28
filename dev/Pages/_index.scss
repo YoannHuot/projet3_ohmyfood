@@ -137,7 +137,6 @@ header {
         & i { 
             font-size: 1.2em;
             color: darken($color: $color-background, $amount: 50%);
-            padding-top: 1em;
         }
     }
 }
@@ -227,7 +226,7 @@ header {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 728px) {
+@media (min-width: 768px) {
     .section_tuto {
         display: flex;
         flex-direction: row;
@@ -243,6 +242,10 @@ header {
             flex-direction: column-reverse;
             justify-content: center;
             align-items: center ;
+
+            & i { 
+                padding-top: 1em;
+            }
 
                 & .section_tuto_text { 
                     width: auto;
